@@ -18,7 +18,22 @@
 	</div>
 	
 	<div id="content">
+		<a href="#" id="mailto">Click to email me.</a>
 		
+		<script type="text/javascript">
+			$("#mailto").click(function(event){
+				event.preventDefault(); // Prevent the execution of the default onClick event of the link.
+				
+				// Fetch the mailto link from the server using ajax...
+				$.ajax({
+			        url: "ajax/mailto.txt",
+			        success: function (response) {
+			        	// ... and add the link to window.location to execute the link.
+			        	$(location).attr("href", response);
+			        },
+			    });
+			});
+		</script>
 	</div>
 </div>
 
