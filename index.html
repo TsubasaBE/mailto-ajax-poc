@@ -29,7 +29,7 @@
 			        dataType: 'json',
 			        success: function (response) {
 			        	// ... and add the link to window.location to execute the link.
-			        	$(location).attr('href', "mailto:" + response.user + "@" + response.domain);
+			        	$(location).attr('href', "mailto:" + response.user + "%40" + response.domain);
 			        }
 			    });
 			});
